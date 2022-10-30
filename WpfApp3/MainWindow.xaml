@@ -1,0 +1,80 @@
+﻿<Window x:Class="WpfApp3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" MinWidth="120" MinHeight="200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.2*"/>
+            <RowDefinition Height="1.2*"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="12*"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="1">
+
+            <MenuItem Header="File" FontSize="15" Margin="5" >
+                <MenuItem Header="_Save" FontSize="12" Click="MenuItem_Click"/>
+                <MenuItem Header="_Upload" FontSize="12" Click="MenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="Home" FontSize="15" Margin="5">
+                <MenuItem Header="Empty" FontSize="12"/>
+                <MenuItem Header="Empty" FontSize="12"/>
+                <MenuItem Header="Empty" FontSize="12"/>
+            </MenuItem>
+            <MenuItem Header="Insert" FontSize="15" Margin="5">
+                <MenuItem Header="Empty" FontSize="12"/>
+                <MenuItem Header="Empty" FontSize="12"/>
+                <MenuItem Header="Empty" FontSize="12"/>
+            </MenuItem>
+            <MenuItem Header="Format" FontSize="15" Margin="5">
+                <MenuItem Header="Empty" FontSize="12"/>
+                <MenuItem Header="Empty" FontSize="12"/>
+                <MenuItem Header="Empty" FontSize="12"/>
+            </MenuItem>
+            <MenuItem Header="View" FontSize="15" Margin="5">
+                <MenuItem Header="Empty" FontSize="12"/>
+                <MenuItem Header="Empty" FontSize="12"/>
+                <MenuItem Header="Empty" FontSize="12"/>
+            </MenuItem>
+            <MenuItem Header="Help" FontSize="15" Margin="5">
+                <MenuItem Header="Empty" FontSize="12"/>
+                <MenuItem Header="Empty" FontSize="12"/>
+                <MenuItem Header="Empty" FontSize="12"/>
+            </MenuItem>
+        </Menu>
+
+        <Canvas Grid.Row="2">
+            <Button Name="bold" Background="Transparent" BorderThickness="1" Canvas.Top="20" BorderBrush="OliveDrab" Canvas.Left="10" FontWeight="Bold" Click="Button_Click">B</Button>
+            <Button Name="normal" Background="Transparent" BorderThickness="1" 
+                    Canvas.Top="20" BorderBrush="OliveDrab" Canvas.Left="70" Click="Button_Click">N</Button>
+            <Button Name ="italic" Canvas.Left="30" Background="Transparent" BorderThickness="1" BorderBrush="OliveDrab"
+                    Canvas.Top="20" FontStyle="Italic" Click="Button_Click">I</Button>
+            <Button Name ="under" Canvas.Left="48" Background="Transparent"
+                    BorderThickness="1" BorderBrush="OliveDrab" Canvas.Top="20" Click="Button_Click">U</Button>
+            <Label Content="FontSize" Canvas.Left="100" FontWeight="Bold" Canvas.Top="-4" />
+            <Label Content="FontFamily" Canvas.Left="180" FontWeight="Bold" Canvas.Top="-4" />
+            <Label Content="Color" Canvas.Left="370" Canvas.Top="-4" FontWeight="Bold"/>
+            <ComboBox Name="comboSize" Canvas.Left="105" Background="Transparent" Canvas.Top="20" Width="45"
+                      Height="20" SelectionChanged="comboSize_SelectionChanged"></ComboBox>
+            <ComboBox Name="comboStyle" Canvas.Left="185" Background="Transparent" Canvas.Top="20" Width="150" Height="20" 
+                      SelectionChanged="comboSize_SelectionChanged"/>
+            <ComboBox Name="comboColor" Canvas.Left="375" Background="Transparent" Canvas.Top="20" Width="150" Height="20" 
+                      SelectionChanged="comboSize_SelectionChanged"/>
+
+        </Canvas>
+
+        <RichTextBox Name="textBox" Grid.Row="3" Margin="2, 4" BorderBrush="DarkOliveGreen" VerticalScrollBarVisibility="Auto"
+                 AcceptsReturn="True">
+            <RichTextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </RichTextBox.Resources>
+        </RichTextBox>
+    </Grid>
+
+</Window>
